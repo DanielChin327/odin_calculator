@@ -58,3 +58,25 @@ body{
 .clear:hover{
   background-color: lightgray !important;
 }
+
+.first-row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.screen{
+  width: 300px;
+  height: 75px;
+  border: 1px solid lightgray !important;
+  margin: 15px;
+}
+
+.previous{
+  font-size: 20px;
+}
+
+.current{
+  font-size: 30px;
+}
