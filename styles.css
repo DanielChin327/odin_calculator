@@ -71,6 +71,10 @@ body{
   height: 75px;
   border: 1px solid lightgray !important;
   margin: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end
 }
 
 .previous{
