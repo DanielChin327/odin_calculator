@@ -22,9 +22,19 @@ document.addEventListener("DOMContentLoaded", function(){
 
   operators.forEach((op) => op.addEventListener("click", function(e){
     handleOperator(e.target.textContent)
-    previousScreen.textContent = previousValue + "" + operator;
-    currentScreen.textContent = currentScreen;
+    previousScreen.textContent = previousValue + " " + operator;
+    currentScreen.textContent = currentValue;
   }))
+
+  clear.addEventListener('click', function() {
+    previousValue ='';
+    currentValue='';
+    operator  ='';
+    previousScreen.textContent = currentValue;
+    currentScreen.textContent = currentValue;
+  })
+
+
 })
 
 function handleNumber(num) {
@@ -38,5 +48,7 @@ function handleOperator(op){
   previousValue = currentValue;
   currentValue = '';
 }
+
+
 
 // 24:00 https://www.youtube.com/watch?v=Kyxvms8pnSU
