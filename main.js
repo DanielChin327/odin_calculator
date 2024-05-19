@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
   equal.addEventListener("click", function (){
     calculate()
-    currentScreen.textContent = "";
+    previousScreen.textContent = "";
     currentScreen.textContent = previousValue;
   })
 })
