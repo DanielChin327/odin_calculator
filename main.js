@@ -5,7 +5,7 @@ let currentValue = '';
 
 
 document.addEventListener("DOMContentLoaded", function(){
-  let clear = document.querySelector(".clear-btn");
+  let clear = document.querySelector(".clear");
   let equal = document.querySelector(".equal");
   let decimal = document.querySelector(".decimal");
 
@@ -26,15 +26,19 @@ document.addEventListener("DOMContentLoaded", function(){
     currentScreen.textContent = currentValue;
   }))
 
-  clear.addEventListener('click', function() {
-    previousValue ='';
-    currentValue='';
-    operator  ='';
+  clear.addEventListener("click", function() {
+    previousValue = '';
+    currentValue = '';
+    operator = '';
     previousScreen.textContent = currentValue;
     currentScreen.textContent = currentValue;
   })
 
-
+  equal.addEventListener("click", function (){
+    calculate()
+    currentScreen.textContent = "";
+    currentScreen.textContent = previousValue;
+  })
 })
 
 function handleNumber(num) {
@@ -49,6 +53,29 @@ function handleOperator(op){
   currentValue = '';
 }
 
+function calculate(){
+  previousValue = Number(previousValue);
+  currentValue = Number(currentValue);
+
+  if(operator === "+"){
+      previousValue += currentValue;
+  }
+  else if (operator === "-") {
+    previousValue -= currentValue;
+  }
+  else if (operator === "x") {
+    previousValue *= currentValue;
+  }
+  else if (operator === "/" ) {
+    previousValue /= currentValue;
+  }
+  previousValue = roundNumber(previousValue);
+  previousValue = previousValue.toString();
+  currentValue = currentValue.toString();
+}
 
 
+function roundNumber(num) {
+  return Math.round(num * 100000000) / 100000000;
+}
 // 24:00 https://www.youtube.com/watch?v=Kyxvms8pnSU
