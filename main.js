@@ -46,6 +46,10 @@ document.addEventListener("DOMContentLoaded", function(){
       }
     }
   })
+
+  decimal.addEventListener("click", function (){
+    addDecimal()
+  })
 })
 
 function handleNumber(num) {
@@ -81,8 +85,16 @@ function calculate(){
   currentValue = currentValue.toString();
 }
 
-
 function roundNumber(num) {
   return Math.round(num * 100000000) / 100000000;
 }
+
+function addDecimal(){
+  (!currentValue.includes(".")){
+    currentValue += ".";
+  }
+}
+
+
+
 // 24:00 https://www.youtube.com/watch?v=Kyxvms8pnSU
