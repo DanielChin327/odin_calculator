@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function(){
         currentScreen.textContent = previousValue;
       }
       else {
-        currentScreen.textContent = previousValue.slice(0,5) + "...";
+        currentScreen.textContent = previousValue.slice(0,10) + "...";
       }
     }
   })
@@ -90,11 +90,7 @@ function roundNumber(num) {
 }
 
 function addDecimal(){
-  (!currentValue.includes(".")){
+  if(!currentValue.includes(".")){
     currentValue += ".";
   }
 }
-
-
-
-// 24:00 https://www.youtube.com/watch?v=Kyxvms8pnSU
